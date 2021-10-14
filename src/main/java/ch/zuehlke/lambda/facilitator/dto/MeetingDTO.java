@@ -1,9 +1,6 @@
 package ch.zuehlke.lambda.facilitator.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import java.util.Collection;
 import java.util.Map;
@@ -11,12 +8,13 @@ import java.util.Map;
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 public class MeetingDTO {
-    private final String id;
-    private final long timeInMillis;
-    private final String gameId;
-    private final String roomId;
-    private final Collection<String> topicIds;
-    private final Map<String, String> memberIdReplyMap;
+    private String id;
+    private long timeInMillis;
+    private String gameId;
+    private String roomId;
+    private Collection<String> topicIds;
+    private Map<String, String> memberIdReplyMap;
 }

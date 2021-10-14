@@ -1,16 +1,14 @@
 package ch.zuehlke.lambda.facilitator.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 public class MemberDTO {
-    private final String id;
-    private final String name;
-    private final String role;
+    private String id;
+    private String name;
+    private String role;
 }
