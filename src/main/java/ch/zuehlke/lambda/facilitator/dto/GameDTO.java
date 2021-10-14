@@ -1,16 +1,14 @@
 package ch.zuehlke.lambda.facilitator.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 public class GameDTO {
-    private final String id;
-    private final String title;
-    private final String uri;
+    private String id;
+    private String title;
+    private String uri;
 }
