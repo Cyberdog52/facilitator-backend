@@ -22,7 +22,9 @@ public class MemberServiceMock implements MemberService {
             new MemberDTO("9", "Raphael Haslebacher", "MEMBER"),
             new MemberDTO("10", "Murièle Trentini", "MEMBER"),
             new MemberDTO("11", "Aaron Krämer", "MEMBER"),
-            new MemberDTO("12", "Jasmin Frei", "MEMBER")
+            new MemberDTO("12", "Jasmin Frei", "MEMBER"),
+            new MemberDTO("13", "Marius Niklaus", "MEMBER"),
+            new MemberDTO("14", "Patrick Grosschmidt", "MEMBER")
     ));
 
     @Override
