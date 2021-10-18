@@ -30,12 +30,8 @@ public class MeetingsController {
         return this.meetingService.getMeeting(id);
     }
 
-    @PutMapping("/{id}")
-    public void updateMeeting(@PathVariable String id, @RequestBody MeetingDTO meetingDTO) {
-        if (!meetingDTO.getId().equals(id)) {
-            throw new BadRequestException("The id " + id + " does not match the updated meetingDTO");
-        }
-
+    @PutMapping
+    public void updateMeeting(@RequestBody MeetingDTO meetingDTO) {
         this.meetingService.updateMeeting(meetingDTO);
     }
 

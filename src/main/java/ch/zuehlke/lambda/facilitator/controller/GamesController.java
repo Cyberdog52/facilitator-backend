@@ -30,12 +30,8 @@ public class GamesController {
         return this.gameService.getGame(id);
     }
 
-    @PutMapping("/{id}")
-    public void updateGame(@PathVariable String id, @RequestBody GameDTO gameDTO) {
-        if (!gameDTO.getId().equals(id)) {
-            throw new BadRequestException("The id " + id + " does not match the updated gameDTO");
-        }
-
+    @PutMapping
+    public void updateGame(@RequestBody GameDTO gameDTO) {
         this.gameService.updateGame(gameDTO);
     }
 
