@@ -1,12 +1,12 @@
 package ch.zuehlke.lambda.facilitator.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Setter;
+import lombok.*;
 
 import java.net.URI;
 
 @Data
+@Builder
+@AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 public class Game {
     private final String id;
