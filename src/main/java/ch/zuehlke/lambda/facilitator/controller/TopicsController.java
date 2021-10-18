@@ -31,11 +31,7 @@ public class TopicsController {
     }
 
     @PutMapping("/{id}")
-    public void updateTopic(@PathVariable String id, @RequestBody TopicDTO topicDTO) {
-        if (!topicDTO.getId().equals(id)) {
-            throw new BadRequestException("The id " + id + " does not match the updated topicDTO");
-        }
-
+    public void updateTopic(@RequestBody TopicDTO topicDTO) {
         this.topicService.updateTopic(topicDTO);
     }
 

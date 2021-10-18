@@ -31,11 +31,7 @@ public class MembersController {
     }
 
     @PutMapping("/{id}")
-    public void updateMember(@PathVariable String id, @RequestBody MemberDTO memberDTO) {
-        if (!memberDTO.getId().equals(id)) {
-            throw new BadRequestException("The id " + id + " does not match the updated memberDTO");
-        }
-
+    public void updateMember(@RequestBody MemberDTO memberDTO) {
         this.memberService.updateMember(memberDTO);
     }
 
