@@ -30,7 +30,7 @@ public class TopicsController {
         return this.topicService.getTopic(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public void updateTopic(@RequestBody TopicDTO topicDTO) {
         this.topicService.updateTopic(topicDTO);
     }

@@ -30,7 +30,7 @@ public class MeetingsController {
         return this.meetingService.getMeeting(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public void updateMeeting(@RequestBody MeetingDTO meetingDTO) {
         this.meetingService.updateMeeting(meetingDTO);
     }

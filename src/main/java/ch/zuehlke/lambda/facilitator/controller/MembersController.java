@@ -30,7 +30,7 @@ public class MembersController {
         return this.memberService.getMember(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public void updateMember(@RequestBody MemberDTO memberDTO) {
         this.memberService.updateMember(memberDTO);
     }

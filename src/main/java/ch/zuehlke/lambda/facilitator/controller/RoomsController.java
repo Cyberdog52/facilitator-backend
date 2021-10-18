@@ -30,7 +30,7 @@ public class RoomsController {
         return this.roomService.getRoom(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public void updateRoom(@RequestBody RoomDTO roomDTO) {
         this.roomService.updateRoom(roomDTO);
     }

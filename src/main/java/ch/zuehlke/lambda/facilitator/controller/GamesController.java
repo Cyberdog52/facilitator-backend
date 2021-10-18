@@ -30,7 +30,7 @@ public class GamesController {
         return this.gameService.getGame(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public void updateGame(@RequestBody GameDTO gameDTO) {
         this.gameService.updateGame(gameDTO);
     }
