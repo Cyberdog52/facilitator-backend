@@ -25,11 +25,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jersey:2.5.5'
     implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
     implementation "io.springfox:springfox-boot-starter:3.0.0"
-    compileOnly "io.springfox:springfox-swagger-ui:3.0.0"
+    runtimeOnly "io.springfox:springfox-swagger-ui:3.0.0"
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
-    testImplementation 'org.springframework.security:spring-security-test:5.5.1'
 }
 
 test {
