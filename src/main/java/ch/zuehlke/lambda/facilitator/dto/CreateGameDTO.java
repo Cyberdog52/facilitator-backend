@@ -7,5 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class CreateGameDTO {
     private String title;
+    private String description;
     private String uri;
 }
