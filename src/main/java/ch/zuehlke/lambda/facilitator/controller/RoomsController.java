@@ -40,8 +40,8 @@ public class RoomsController {
     }
 
     @PostMapping
-    public void createRoom(@RequestBody CreateRoomDTO createRoomDTO) {
-        this.roomService.createRoom(createRoomDTO);
+    public String createRoom(@RequestBody CreateRoomDTO createRoomDTO) {
+        return this.roomService.createRoom(createRoomDTO);
     }
 
     @DeleteMapping("/{id}")

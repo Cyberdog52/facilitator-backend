@@ -40,8 +40,8 @@ public class MembersController {
     }
 
     @PostMapping
-    public void createMember(@RequestBody CreateMemberDTO createMemberDTO) {
-        this.memberService.createMember(createMemberDTO);
+    public String createMember(@RequestBody CreateMemberDTO createMemberDTO) {
+        return this.memberService.createMember(createMemberDTO);
     }
 
     @DeleteMapping("/{id}")

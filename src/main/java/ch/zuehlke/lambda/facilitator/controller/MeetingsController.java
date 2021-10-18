@@ -40,8 +40,8 @@ public class MeetingsController {
     }
 
     @PostMapping
-    public void createMeeting(@RequestBody CreateMeetingDTO createMeetingDTO) {
-        this.meetingService.createMeeting(createMeetingDTO);
+    public String createMeeting(@RequestBody CreateMeetingDTO createMeetingDTO) {
+        return this.meetingService.createMeeting(createMeetingDTO);
     }
 
     @DeleteMapping("/{id}")

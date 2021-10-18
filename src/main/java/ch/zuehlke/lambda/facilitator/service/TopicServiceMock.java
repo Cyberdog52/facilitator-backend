@@ -44,8 +44,10 @@ public class TopicServiceMock implements TopicService {
     }
 
     @Override
-    public void createTopic(CreateTopicDTO createTopicDTO) {
-        topics.add(new TopicDTO(UUID.randomUUID().toString(), createTopicDTO.getTitle(), createTopicDTO.getDescription(), createTopicDTO.getAssigneeId()));
+    public String createTopic(CreateTopicDTO createTopicDTO) {
+        String uuid = UUID.randomUUID().toString();
+        topics.add(new TopicDTO(uuid, createTopicDTO.getTitle(), createTopicDTO.getDescription(), createTopicDTO.getAssigneeId()));
+        return uuid;
     }
 
     @Override

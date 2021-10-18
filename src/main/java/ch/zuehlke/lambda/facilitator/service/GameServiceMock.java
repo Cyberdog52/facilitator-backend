@@ -35,8 +35,10 @@ public class GameServiceMock implements GameService {
     }
 
     @Override
-    public void createGame(CreateGameDTO createGameDTO) {
-        games.add(new GameDTO(UUID.randomUUID().toString(), createGameDTO.getTitle(), createGameDTO.getUri()));
+    public String createGame(CreateGameDTO createGameDTO) {
+        String uuid = UUID.randomUUID().toString();
+        games.add(new GameDTO(uuid, createGameDTO.getTitle(), createGameDTO.getUri()));
+        return uuid;
     }
 
     @Override

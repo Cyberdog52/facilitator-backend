@@ -16,7 +16,7 @@ public interface TopicService {
 
     void updateTopic(TopicDTO topicDTO) throws NotFoundException;
 
-    void createTopic(CreateTopicDTO createTopicDTO);
+    String createTopic(CreateTopicDTO createTopicDTO);
 
     void deleteTopic(String id);
 }

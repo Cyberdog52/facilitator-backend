@@ -40,8 +40,8 @@ public class TopicsController {
     }
 
     @PostMapping
-    public void createTopic(@RequestBody CreateTopicDTO createTopicDTO) {
-        this.topicService.createTopic(createTopicDTO);
+    public String createTopic(@RequestBody CreateTopicDTO createTopicDTO) {
+        return this.topicService.createTopic(createTopicDTO);
     }
 
     @DeleteMapping("/{id}")

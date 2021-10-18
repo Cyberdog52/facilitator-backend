@@ -12,7 +12,7 @@ public interface MemberService {
 
     Collection<MemberDTO> getMembers();
 
-    void createMember(CreateMemberDTO createMemberDTO);
+    String createMember(CreateMemberDTO createMemberDTO);
 
     void updateMember(MemberDTO memberDTO) throws NotFoundException;
 

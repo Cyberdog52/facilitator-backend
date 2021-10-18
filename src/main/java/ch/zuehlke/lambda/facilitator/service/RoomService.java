@@ -16,7 +16,7 @@ public interface RoomService {
 
     void updateRoom(RoomDTO roomDTO) throws NotFoundException;
 
-    void createRoom(CreateRoomDTO createRoomDTO);
+    String createRoom(CreateRoomDTO createRoomDTO);
 
     void deleteRoom(String id);
 }

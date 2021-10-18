@@ -16,7 +16,7 @@ public interface MeetingService {
 
     void updateMeeting(MeetingDTO meetingDTO) throws NotFoundException;
 
-    void createMeeting(CreateMeetingDTO createMeetingDTO);
+    String createMeeting(CreateMeetingDTO createMeetingDTO);
 
     void deleteMeeting(String id);
 }

@@ -16,7 +16,7 @@ public interface GameService {
 
     void updateGame(GameDTO gameDTO) throws NotFoundException;
 
-    void createGame(CreateGameDTO createGameDTO);
+    String createGame(CreateGameDTO createGameDTO);
 
     void deleteGame(String id);
 }
