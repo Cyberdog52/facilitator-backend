@@ -37,8 +37,10 @@ public class RoomServiceMock implements RoomService {
     }
 
     @Override
-    public void createRoom(CreateRoomDTO createRoomDTO) {
-        rooms.add(new RoomDTO(UUID.randomUUID().toString(), createRoomDTO.getName(), createRoomDTO.getCapacity()));
+    public String createRoom(CreateRoomDTO createRoomDTO) {
+        String uuid = UUID.randomUUID().toString();
+        rooms.add(new RoomDTO(uuid, createRoomDTO.getName(), createRoomDTO.getCapacity()));
+        return uuid;
     }
 
     @Override

@@ -40,8 +40,8 @@ public class GamesController {
     }
 
     @PostMapping
-    public void createGame(@RequestBody CreateGameDTO createGameDTO) {
-        this.gameService.createGame(createGameDTO);
+    public String createGame(@RequestBody CreateGameDTO createGameDTO) {
+        return this.gameService.createGame(createGameDTO);
     }
 
     @DeleteMapping("/{id}")

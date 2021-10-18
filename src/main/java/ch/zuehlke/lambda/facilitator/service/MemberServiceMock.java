@@ -33,8 +33,10 @@ public class MemberServiceMock implements MemberService {
     }
 
     @Override
-    public void createMember(CreateMemberDTO createMemberDTO) {
-        members.add(new MemberDTO(UUID.randomUUID().toString(), createMemberDTO.getName(), createMemberDTO.getRole()));
+    public String createMember(CreateMemberDTO createMemberDTO) {
+        String uuid = UUID.randomUUID().toString();
+        members.add(new MemberDTO(uuid, createMemberDTO.getName(), createMemberDTO.getRole()));
+        return uuid;
     }
 
     @Override

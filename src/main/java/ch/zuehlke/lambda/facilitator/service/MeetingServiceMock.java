@@ -36,8 +36,10 @@ public class MeetingServiceMock implements MeetingService {
     }
 
     @Override
-    public void createMeeting(CreateMeetingDTO createMeetingDTO) {
-        meetings.add(new MeetingDTO(UUID.randomUUID().toString(), createMeetingDTO.getTimeInMillis(), createMeetingDTO.getGameId(), createMeetingDTO.getRoomId(), createMeetingDTO.getTopicIds(), createMeetingDTO.getMemberIdReplyMap()));
+    public String createMeeting(CreateMeetingDTO createMeetingDTO) {
+        String uuid = UUID.randomUUID().toString();
+        meetings.add(new MeetingDTO(uuid, createMeetingDTO.getTimeInMillis(), createMeetingDTO.getGameId(), createMeetingDTO.getRoomId(), createMeetingDTO.getTopicIds(), createMeetingDTO.getMemberIdReplyMap()));
+        return uuid;
     }
 
     @Override
