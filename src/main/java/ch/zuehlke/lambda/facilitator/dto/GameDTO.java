@@ -10,5 +10,6 @@ import lombok.*;
 public class GameDTO {
     private String id;
     private String title;
+    private String description;
     private String uri;
 }

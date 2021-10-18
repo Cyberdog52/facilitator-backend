@@ -11,6 +11,7 @@ import java.net.URI;
 public class Game {
     private final String id;
     private final String title;
+    private final String description;
     @Setter
     private URI uri;
 }

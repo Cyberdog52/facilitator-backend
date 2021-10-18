@@ -11,8 +11,9 @@ import java.util.*;
 public class GameServiceMock implements GameService {
 
     private static final List<GameDTO> games = new ArrayList<>(List.of(
-            new GameDTO("1", "Skribbl", "https://skribbl.io/"),
-            new GameDTO("2", "Codenames", "https://horsepaste.com/")
+            new GameDTO("1", "Skribbl", "Montagsmaler", "https://skribbl.io/"),
+            new GameDTO("2", "Codenames", "Ein Teamspiel bei dem einer Begriffe mit einem Wort zusammenfassen muss und die anderen die Begriffe erraten.", "https://horsepaste.com/"),
+            new GameDTO("3", "Rucksackspiel", "Jeder packt einen Gegenstand ein und muss zuvor alle bereits eingepackten Gegenstände der anderen Spieler aufzählen.", null)
     ));
 
     @Override
@@ -37,7 +38,7 @@ public class GameServiceMock implements GameService {
     @Override
     public String createGame(CreateGameDTO createGameDTO) {
         String uuid = UUID.randomUUID().toString();
-        games.add(new GameDTO(uuid, createGameDTO.getTitle(), createGameDTO.getUri()));
+        games.add(new GameDTO(uuid, createGameDTO.getTitle(), createGameDTO.getDescription(), createGameDTO.getUri()));
         return uuid;
     }
 
