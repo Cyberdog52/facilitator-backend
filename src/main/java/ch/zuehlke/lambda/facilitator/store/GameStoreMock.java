@@ -54,6 +54,6 @@ public class GameStoreMock implements GameStore {
 
     @Override
     public void deleteGame(String id) {
-        games.removeIf(gameDTO -> gameDTO.getId().equals(id));
+        games.removeIf(game -> game.getId().equals(id));
     }
 }
