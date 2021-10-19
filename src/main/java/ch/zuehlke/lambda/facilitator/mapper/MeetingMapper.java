@@ -15,12 +15,17 @@ public class MeetingMapper {
     }
 
     public static MeetingDTO map(Meeting meeting) {
+        Map<String, String> memberIdReplyStringMap = new HashMap<>();
+        for (Map.Entry<Member, Reply> entry : meeting.getMemberReplyMap().entrySet()) {
+            memberIdReplyStringMap.put(entry.getKey().getId(), entry.getValue().name());
+        }
         return MeetingDTO.builder()
                 .id(meeting.getId())
                 .timeInMillis(meeting.getDate() == null ? 0L : meeting.getDate().getTime())
                 .gameId(meeting.getGame() == null ? null : meeting.getGame().getId())
                 .roomId(meeting.getRoom() == null ? null : meeting.getRoom().getId())
                 .topicIds(meeting.getTopics() == null ? null : meeting.getTopics().stream().map(Topic::getId).collect(Collectors.toList()))
+                .memberIdReplyMap(memberIdReplyStringMap)
                 .build();
     }
 
