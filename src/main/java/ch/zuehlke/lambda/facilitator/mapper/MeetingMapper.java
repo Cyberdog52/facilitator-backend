@@ -61,8 +61,8 @@ public class MeetingMapper {
         MeetingDTO meetingDTO = MeetingDTO.builder()
                 .id(UUID.randomUUID().toString())
                 .timeInMillis(createMeetingDTO.getTimeInMillis())
-                .gameId(game.getId())
-                .roomId(room.getId())
+                .gameId(game == null ? null : game.getId())
+                .roomId(room == null ? null : room.getId())
                 .topicIds(createMeetingDTO.getTopicIds())
                 .memberIdReplyMap(createMeetingDTO.getMemberIdReplyMap())
                 .build();
