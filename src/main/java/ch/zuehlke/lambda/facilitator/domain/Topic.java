@@ -1,10 +1,10 @@
 package ch.zuehlke.lambda.facilitator.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Setter;
+import lombok.*;
 
 @Data
+@AllArgsConstructor
+@Builder
 @EqualsAndHashCode(of = {"id"})
 public class Topic {
     private final String id;
