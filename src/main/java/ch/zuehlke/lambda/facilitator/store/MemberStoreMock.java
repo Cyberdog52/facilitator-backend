@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class MemberStoreMock implements MemberStore {
 
-    private static List<Member> members = new ArrayList<>(List.of(
+    static List<Member> members = new ArrayList<>(List.of(
             new Member("1", "Tamara Widmer", Role.HCU),
             new Member("2", "Delia Treichler", Role.TL),
             new Member("3", "Andres Konrad", Role.MEMBER),
