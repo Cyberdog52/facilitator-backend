@@ -4,8 +4,6 @@ import ch.zuehlke.lambda.facilitator.domain.*;
 import ch.zuehlke.lambda.facilitator.dto.CreateMeetingDTO;
 import ch.zuehlke.lambda.facilitator.dto.MeetingDTO;
 
-import java.sql.Date;
-import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -29,7 +27,7 @@ public class MeetingMapper {
     public static Meeting map(MeetingDTO meetingDTO, Game game, Room room, List<Topic> topicsForMeeting, Set<Member> membersForMeeting) {
         return Meeting.builder()
                 .id(meetingDTO.getId())
-                .date(Date.from(Instant.ofEpochMilli(meetingDTO.getTimeInMillis())))
+                .date(new Date(meetingDTO.getTimeInMillis()))
                 .game(game)
                 .room(room)
                 .topics(topicsForMeeting)
