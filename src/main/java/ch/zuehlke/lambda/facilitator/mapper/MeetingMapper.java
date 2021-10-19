@@ -16,9 +16,12 @@ public class MeetingMapper {
 
     public static MeetingDTO map(Meeting meeting) {
         Map<String, String> memberIdReplyStringMap = new HashMap<>();
-        for (Map.Entry<Member, Reply> entry : meeting.getMemberReplyMap().entrySet()) {
-            memberIdReplyStringMap.put(entry.getKey().getId(), entry.getValue().name());
+        if (meeting.getMemberReplyMap() != null) {
+            for (Map.Entry<Member, Reply> entry : meeting.getMemberReplyMap().entrySet()) {
+                memberIdReplyStringMap.put(entry.getKey().getId(), entry.getValue().name());
+            }
         }
+
         return MeetingDTO.builder()
                 .id(meeting.getId())
                 .timeInMillis(meeting.getDate() == null ? 0L : meeting.getDate().getTime())
