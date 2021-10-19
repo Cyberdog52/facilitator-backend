@@ -49,14 +49,16 @@ public class MeetingServiceImpl implements MeetingService {
         Game game = meetingDTO.getGameId() == null ? null : gameStore.getGame(meetingDTO.getGameId());
         Room room = meetingDTO.getRoomId() == null ? null : roomStore.getRoom(meetingDTO.getRoomId());
 
-        List<Topic> topicsForMeeting = meetingDTO.getTopicIds().stream()
-                .map(topicStore::getTopic)
-                .collect(Collectors.toList());
+        List<Topic> topicsForMeeting = meetingDTO.getTopicIds() == null ? null :
+                meetingDTO.getTopicIds().stream()
+                        .map(topicStore::getTopic)
+                        .collect(Collectors.toList());
 
-        Set<Member> membersForMeeting = meetingDTO.getMemberIdReplyMap()
-                .keySet().stream()
-                .map(memberStore::getMember)
-                .collect(Collectors.toSet());
+        Set<Member> membersForMeeting = meetingDTO.getMemberIdReplyMap() == null ? null :
+                meetingDTO.getMemberIdReplyMap()
+                        .keySet().stream()
+                        .map(memberStore::getMember)
+                        .collect(Collectors.toSet());
 
         Meeting meeting = MeetingMapper.map(meetingDTO, game, room, topicsForMeeting, membersForMeeting);
         meetingStore.updateMeeting(meeting);
@@ -67,14 +69,16 @@ public class MeetingServiceImpl implements MeetingService {
         Game game = createMeetingDTO.getGameId() == null ? null : gameStore.getGame(createMeetingDTO.getGameId());
         Room room = createMeetingDTO.getRoomId() == null ? null : roomStore.getRoom(createMeetingDTO.getRoomId());
 
-        List<Topic> topicsForMeeting = createMeetingDTO.getTopicIds().stream()
-                .map(topicStore::getTopic)
-                .collect(Collectors.toList());
+        List<Topic> topicsForMeeting = createMeetingDTO.getTopicIds() == null ? null :
+                createMeetingDTO.getTopicIds().stream()
+                        .map(topicStore::getTopic)
+                        .collect(Collectors.toList());
 
-        Set<Member> membersForMeeting = createMeetingDTO.getMemberIdReplyMap()
-                .keySet().stream()
-                .map(memberStore::getMember)
-                .collect(Collectors.toSet());
+        Set<Member> membersForMeeting = createMeetingDTO.getMemberIdReplyMap() == null ? null :
+                createMeetingDTO.getMemberIdReplyMap()
+                        .keySet().stream()
+                        .map(memberStore::getMember)
+                        .collect(Collectors.toSet());
 
         Meeting meeting = MeetingMapper.map(createMeetingDTO, game, room, topicsForMeeting, membersForMeeting);
         meetingStore.createMeeting(meeting);
