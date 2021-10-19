@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class TopicStoreMock implements TopicStore {
 
-    private static final List<Topic> topics = new ArrayList<>(List.of(
+    static final List<Topic> topics = new ArrayList<>(List.of(
             new Topic("1", "Tamara News", "Neueste Infos über Zühlke", MemberStoreMock.members.get(0)),
             new Topic("2", "Team Retro", "Höchste Zeit wieder für eine Retro", MemberStoreMock.members.get(1)),
             new Topic("3", "Gspürmschmi-Spieli", "Tanzt eure Namen", MemberStoreMock.members.get(2))
@@ -45,6 +45,6 @@ public class TopicStoreMock implements TopicStore {
 
     @Override
     public void deleteTopic(String id) {
-        topics.removeIf(topicDTO -> topicDTO.getId().equals(id));
+        topics.removeIf(topic -> topic.getId().equals(id));
     }
 }

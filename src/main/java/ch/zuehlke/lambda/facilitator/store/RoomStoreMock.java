@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class RoomStoreMock implements RoomStore {
 
-    private final List<Room> rooms = new ArrayList<>(List.of(
+    static final List<Room> rooms = new ArrayList<>(List.of(
             new Room("1", "Multiplex 1", 20),
             new Room("2", "Toolbox 180", 10),
             new Room("3", "Bento 320", 8),

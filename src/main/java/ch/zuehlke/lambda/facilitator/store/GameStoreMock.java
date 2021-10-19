@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class GameStoreMock implements GameStore {
 
-    private static List<Game> games;
+    static List<Game> games;
 
     static {
         try {

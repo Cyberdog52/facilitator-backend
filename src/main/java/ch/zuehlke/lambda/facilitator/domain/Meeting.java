@@ -1,14 +1,14 @@
 package ch.zuehlke.lambda.facilitator.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
 
 @Data
+@Builder
+@AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 public class Meeting {
     private final String id;
