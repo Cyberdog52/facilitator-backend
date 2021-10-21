@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/facilitator-1.0.0.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/facilitator-1.2.0.jar

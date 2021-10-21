@@ -7,7 +7,7 @@ plugins {
 apply from: file("$rootProject.projectDir/gradle/heroku/stage.gradle")
 
 group = 'ch.zuehlke.lambda'
-version = '1.0.0' // update ProcFile as well when you want to deploy the newest version
+version = '1.2.0' // update ProcFile as well when you want to deploy the newest version
 sourceCompatibility = '11'
 
 configurations {
