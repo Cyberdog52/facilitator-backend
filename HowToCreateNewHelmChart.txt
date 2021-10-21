@@ -1,0 +1,43 @@
+create new version:
+- adjust build.gradle & procile 
+- [cmd] gradlew build
+- Create Dockerfile to have app as container
+- [pws] docker build --build-arg JAR_FILE=build/libs/facilitator-1.3.0.jar -t raphasle/lambda-facilitator:1.3.0 .
+- check with 'docker image ls' & and in Docker GUI
+- run in docker
+  docker run -p 8080:8080 --name lambda-facilitator -d -e "SPRING_PROFILES_ACTIVE=dev" raphasle/lambda-facilitator:1.3.0
+- stop container
+  docker stop lambda-facilitator
+- delete container
+  docker rm lambda-facilitator
+- publish to DockerHub
+  docker push raphasle/lambda-facilitator:1.3.0
+- Run it in k8s, create deyployment.yaml and service.yaml files, but we create helm chart directly (yaml files with variables that are specified in values.yaml)
+  (multiple values files possible (PRD, etc.) and multiple yaml files appliable at once
+- update version in Chart.yaml
+(
+- install (cd charts)
+  helm install lambda-facilitator lambda-facilitator
+- helm upgrade --set replicaCount=2 lambda-facilitator lambda-facilitator
+- check with 'kubectl get pods'
+- kubectl describe svc lambda-facilitator
+- kubectl delete pods --selector app.kubernetes.io/name=lambda-facilitator
+- helm uninstall lambda-facilitator
+)
+- git commit & push
+- run github action
+- helm repo add lambda https://cyberdog52.github.io/facilitator-backend/
+- helm search repo lambda --versions
+- helm repo update
+- helm search repo lambda --versions
+- helm install my-lambda-facilitator lambda/lambda-facilitator (release name, chart name)
+- kubectl describe svc my-lambda-facilitator
+- helm upgrade --set replicaCount=2 my-lambda-facilitator lambda/lambda-facilitator
+- helm delete my-lambda-facilitator
+
+next steps
+- create frontend container
+- include in (same) helm chart
+- maybe add Prometheus (tracking CPU/RAM usage etc.) and Grafana (showing the data)
+- install helm chart in Azure
+- ...
