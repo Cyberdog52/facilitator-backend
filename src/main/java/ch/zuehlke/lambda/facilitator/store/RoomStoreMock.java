@@ -2,6 +2,7 @@ package ch.zuehlke.lambda.facilitator.store;
 
 import ch.zuehlke.lambda.facilitator.domain.Room;
 import ch.zuehlke.lambda.facilitator.exception.NotFoundException;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
+@Profile(value = "dev")
 public class RoomStoreMock implements RoomStore {
 
     static final List<Room> rooms = new ArrayList<>(List.of(

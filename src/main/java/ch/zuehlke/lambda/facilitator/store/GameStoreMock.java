@@ -2,6 +2,7 @@ package ch.zuehlke.lambda.facilitator.store;
 
 import ch.zuehlke.lambda.facilitator.domain.Game;
 import ch.zuehlke.lambda.facilitator.exception.NotFoundException;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.net.URI;
@@ -12,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
+@Profile(value = "dev")
 public class GameStoreMock implements GameStore {
 
     static List<Game> games;

@@ -1,16 +1,20 @@
 package ch.zuehlke.lambda.facilitator.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
+
+import javax.persistence.*;
 
 @Data
 @Builder
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
+@NoArgsConstructor
+@Table
+@Entity
 public class Member {
-    private final String id;
-    private final String name;
-    private final Role role;
+    @Id
+    private String id;
+    private String name;
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
 }

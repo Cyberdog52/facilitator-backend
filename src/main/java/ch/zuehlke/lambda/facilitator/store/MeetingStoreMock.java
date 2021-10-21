@@ -3,6 +3,7 @@ package ch.zuehlke.lambda.facilitator.store;
 import ch.zuehlke.lambda.facilitator.domain.Meeting;
 import ch.zuehlke.lambda.facilitator.domain.Reply;
 import ch.zuehlke.lambda.facilitator.exception.NotFoundException;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
@@ -10,6 +11,7 @@ import java.time.Instant;
 import java.util.*;
 
 @Service
+@Profile(value = "dev")
 public class MeetingStoreMock implements MeetingStore {
 
     private static final List<Meeting> meetings = new ArrayList<>(List.of(

@@ -1,16 +1,21 @@
 package ch.zuehlke.lambda.facilitator.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
 @Builder
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"id"})
+@NoArgsConstructor
+@Entity
+@Table
 public class Room {
-    private final String id;
-    private final String name;
-    private final int capacity;
+    @Id
+    private String id;
+    private String name;
+    private int capacity;
 }

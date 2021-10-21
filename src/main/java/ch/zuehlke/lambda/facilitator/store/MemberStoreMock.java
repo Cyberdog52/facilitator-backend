@@ -3,6 +3,7 @@ package ch.zuehlke.lambda.facilitator.store;
 import ch.zuehlke.lambda.facilitator.domain.Member;
 import ch.zuehlke.lambda.facilitator.domain.Role;
 import ch.zuehlke.lambda.facilitator.exception.NotFoundException;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
+@Profile(value = "dev")
 public class MemberStoreMock implements MemberStore {
 
     static List<Member> members = new ArrayList<>(List.of(
